@@ -14,7 +14,7 @@ class BooksList extends Component {
             <Table.HeaderCell>Title</Table.HeaderCell>
             <Table.HeaderCell>Author</Table.HeaderCell>
             <Table.HeaderCell>Year</Table.HeaderCell>
-			<Table.HeaderCell>Status</Table.HeaderCell>
+			      <Table.HeaderCell>Status</Table.HeaderCell>
         </Table.Row>
         </Table.Header>
 
@@ -23,9 +23,7 @@ class BooksList extends Component {
             return (
               <Table.Row key={el.id}>
                 <Table.Cell>{el.id}</Table.Cell>
-                <Table.Cell>
-                  {el.title}
-                </Table.Cell>
+                <Table.Cell>{el.title}</Table.Cell>
                 <Table.Cell>{el.author}</Table.Cell>
                 <Table.Cell>{el.year}</Table.Cell>
 				<Table.Cell>{el.status}</Table.Cell>
