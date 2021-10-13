@@ -1,9 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import BooksList from './BooksList';
 import './Home.css'
 
-class Books extends Component {
-	render() {
+function Books(){
 	  return (
         <div>
             <h1 style={{backgroundColor: "pink", margin: "20px", marginTop: "0px"}}>Requests</h1>
@@ -14,6 +13,5 @@ class Books extends Component {
 	    </div>
 	  );
 	}
-  }
 
   export default Books;

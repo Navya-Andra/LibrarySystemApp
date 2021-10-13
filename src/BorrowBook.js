@@ -1,8 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import MyForm from './Form'
 
-class BorrowBook extends Component {
-	render() {
+function BorrowBook(){
 	  return (
         <div>
             <h1 style={{backgroundColor: "pink", margin: "10px", marginTop: "0px"}}>Reserve Book</h1>
@@ -12,7 +11,6 @@ class BorrowBook extends Component {
 		        </div>
         </div>
 	  );
-	}
   }
 
   export default BorrowBook;

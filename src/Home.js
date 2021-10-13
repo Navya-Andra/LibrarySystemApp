@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Home.css'
 import News from './News'
 import books from './data.json';
 import {  Table, Divider } from "semantic-ui-react";
 
-class RecentBooks extends Component {
-	render() {
+function RecentBooks(){
 	  return (
 		<div className="box-field">
 			<h3>My Recent Books</h3>
@@ -40,29 +39,24 @@ class RecentBooks extends Component {
 			</div>
 		</div>
 	  );
-	}
   }
   
-  class Newsbox extends Component {
-	render() {
+  function Newsbox(){
 	  return (
 		<div className="newsbox">
 		  <h2>News</h2>
 		  <News />
 		</div>
 	  );
-	}
   }
   
-  export default class Home extends React.Component {
-	render() {
+  export default function Home(){
 	  return (
 		<div className="rowC">
 		  <RecentBooks />
 		  <Newsbox />
 		</div>
 	  );
-	}
   }
   
  

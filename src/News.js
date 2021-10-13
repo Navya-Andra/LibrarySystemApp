@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Grid, List, Divider} from "semantic-ui-react";
 import news from './sample.json';
 
-class News extends Component {
-  render() {
+function News() {
     return (
       <Container>
         <Grid>
@@ -30,6 +29,5 @@ class News extends Component {
       </Container>
     );
   }
-}
 
 export default News;

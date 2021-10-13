@@ -1,7 +1,7 @@
 
 import {AppBar,Toolbar,Box,Button} from "@material-ui/core";
-import React, {Component} from "react";
-// import Login from './Login.js'
+import React, {useState} from "react";
+
 const styles = {
   loginButton: {
     padding: '2px',
@@ -13,29 +13,21 @@ const styles = {
   };
 
   
-class Header extends Component{
-  constructor(props) {
-    super(props) 
-    this.state = {
-        isOpen: false
+function Header(){
+  const [isOpen, setIsOpen] = useState(false);
+const toggle = () => {setIsOpen(prevState => {
+  return {
+      isOpen: !prevState.isOpen
     }
-       this.toggle = this.toggle.bind(this);
+  });
 }
-toggle() {
-    this.setState(prevState => {
-        return {
-            isOpen: !prevState.isOpen
-        }
-    });
-}
-  render(){
-    let btnTxt = this.state.isOpen ? 'Login' : 'Logout'
+    let btnTxt = isOpen ? 'Login' : 'Logout'
     return (
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Box sx={{ flexGrow: 1}}>
         <AppBar position="static">
           <Toolbar>
-           <Button style = {styles.loginButton} onClick={this.toggle}>{btnTxt}</Button>
+           <Button style = {styles.loginButton} onClick={toggle}>{btnTxt}</Button>
           </Toolbar>
         </AppBar>
       </Box>
@@ -43,5 +35,4 @@ toggle() {
       
     );
   }
-}
 export default Header;

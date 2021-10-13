@@ -1,23 +1,15 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 
-class MyForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: 'coconut'};
+function MyForm(){
+  const[state, setState] = useState("");
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('Your Request list contains: ' + this.state.value + ' books');
+  const handleChange = (event) => {
+    setState({value: event.target.value});
+}
+  const handleSubmit = (event) => {
     event.preventDefault();
-  }
-  render() {
+}
+
     return (
       <div class="form-container">
         <form class="register-form">
@@ -55,10 +47,10 @@ class MyForm extends Component {
             name="AuthorName"
             required="true"
           />
-         <form onSubmit={this.handleSubmit}>
+         <form onSubmit={handleSubmit}>
           <label>
           No. of Books 
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select value={state.value} onChange={handleChange}>
             <option value="1">1</option>
             <option value="1">2</option>
             <option value="3">3</option>
@@ -73,6 +65,5 @@ class MyForm extends Component {
       </div>
     );
   }
-}
 
 export default MyForm;

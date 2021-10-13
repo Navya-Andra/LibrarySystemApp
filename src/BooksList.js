@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import {  Table, Divider } from "semantic-ui-react";
 import books from './data.json';
 
 
-class BooksList extends Component {
- render() {
+function BooksList(){
     return (
 		<div>
 			<Table singleLine>
@@ -36,7 +35,6 @@ class BooksList extends Component {
 
 		</div>
    );
-  }
 }
 
 export default BooksList;

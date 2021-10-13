@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Drawer, Divider, IconButton }
 	from '@material-ui/core';
 import { List, ListItem, ListItemIcon, ListItemText }
@@ -26,33 +26,22 @@ link: {
 
 };
 
-export default class MarerialUIDrawer
-	extends React.Component {
-constructor(props) {
-	super(props);
-	this.state = {
-	isDrawerOpened: false,
-	};
-}
-// sets the drawer status to true when clicked
-toggleDrawerStatus = () => {
-	this.setState({
-	isDrawerOpened: true,
-	})
+export default function MarerialUIDrawer(){
+	const [isDrawerOpened, setIsDrawerOpened] = useState(false);
+
+const toggleDrawerStatus = () => {
+	setIsDrawerOpened(true);
 }
 // Below function is for the drawer to close on click
-closeDrawer = () => {
-	this.setState({
-	isDrawerOpened: false,
-	})
+const closeDrawer = () => {
+	setIsDrawerOpened(false);
 }
-render() {
-	const { isDrawerOpened } = this.state;
-	return (
+// const { isDrawerOpened } = setIsDrawerOpened(false);
+return (
 	<div>
 		<div style={styles.sideNav}>
 			{/* initially sets the drawer status to true */}
-			<IconButton onClick={this.toggleDrawerStatus}> 
+			<IconButton onClick={toggleDrawerStatus}> 
 			{/* if drawer is open no change(null), else display ReorderIcon */}
 			 {!isDrawerOpened ? <ReorderIcon /> : null }
 			</IconButton>
@@ -68,7 +57,7 @@ render() {
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
 		open={isDrawerOpened}
-        onClose={this.closeDrawer}
+        onClose={closeDrawer}
 		>
 		<Link to='/' style={styles.link}>
 			<List>
@@ -101,5 +90,4 @@ render() {
 		</Drawer>
 	</div>
 	);
-}
 }
